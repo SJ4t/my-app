@@ -1,0 +1,29 @@
+import React, {useState} from 'react';
+import { Container, Form, Button } from 'react-bootstap';
+import cities from './cities.json'; 
+ 
+ export default function FormComponent () {
+
+     const [ selectedCity, setSelectedCity ] = useState({});
+    function handleOnClick (event) {
+        setSelectedCity(sity);
+        event.prevent.Default();
+        const
+    }
+ 
+ return (
+     <Container>
+        <Form onSubmit={handleOnSubmit}>
+            <Form.Group className="mb-3" controlId="formGroupEmail">
+                <Form.Label>Choose City</form.Label>
+                <Form.Select onChange={handleOnClick} aria-lable="Default
+                
+
+
+
+            </Form.Select>
+        </Form.Group>
+        <Form.Group controlId="unit">
+            <Form.Lable>
+
+}

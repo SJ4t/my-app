@@ -1,0 +1,22 @@
+ [
+    {
+        "lable": "Current",
+        "value": "current"
+    },
+    {
+        "lable": "Minutely",
+        "value": "minutely"
+    },
+    {
+        "lable": "Hourly",
+        "value": "hourly"
+    },
+    {
+        "lable": "Daily",
+        "value": "daily"
+    },
+    {
+        "lable": "Alerts",
+        "value": "alerts"
+    }
+ ]

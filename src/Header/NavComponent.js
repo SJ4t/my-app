@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Container } from 'react-bootstrap';
-
+//react-bootstrap это готовая библиотека react компонентов
 export default function NavComponent() {
     return (
         <Navbar variant="dark" bg="dark" expand="lg">

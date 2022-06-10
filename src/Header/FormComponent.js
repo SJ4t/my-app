@@ -4,9 +4,14 @@ import cities from './cities.json';
 import dataTypes from './type.json';
 
 export default function FormComponent(props) {
-
+  // useRef это хук который в основном как способ получить доступ к браузероскому DOM'у
+  // что бы назначить на какой элемент будем ссылаться, мы используем атрибут ref={} в html
+  // мы получаем всё дерево DOM в объекте current. formElement.current
   const formElement = useRef(null);
 
+  // useEffect по большей степени используется для работы с бр. DOM
+  // useEffect запускается после того как рендер компонента закончился.
+  // useEffect на сам компонент, он не запускает рендер или ре-рендер
   useEffect(() => {
     if (props.form === null) {
       props.setForm({
@@ -17,16 +22,34 @@ export default function FormComponent(props) {
     }
   });
 
-
+  // onInput запускается при введении пользователем данных в input thml teg.
+  // только в Form и input teg
   function OnInput() {
+    // функция которая берёт ссылку на элемент (Form) DOM и назначает ему новое событие. это новое событие запускает Submit функцию формы
     formElement.current.dispatchEvent(
       new Event("submit", { cancelable: true, bubbles: true })
     );
   }
 
+  // onInput и onSubmit это события хтмл это вещи которые происходят в элементами хтмл
+  // события исходят из браузера и из пользователя
+  // у события должен быть обработчик - javascript функция
+  // событие передаёт обработчику: DOM структуру элемента на, котором висит прослушка события.
+  // event.target 
+
+  // Form форма используется для получения данных от пользователя и отправки их на сервер для обработки
+  // Form для этого используется два главных протокола Post и Get
+  // POST 
+  // GET
+  // по 
+  // а если
+  // в форме используются input тэги для сбора данных
+
+  // в реакте каждый элемент должен быть уникальным. это нужно для отслеживания любых изминений 
+  // и тем самым рендерит только то, что необходимо
   return (
     <Container>
-      <Form ref={formElement} onInput={OnInput} onSubmit={props.handleOnSubmitForm}>
+      <Form method="GET" ref={formElement} onInput={OnInput} onSubmit={props.handleOnSubmitForm}>
         <Row>
           <Col>
             <Form.Group className="mb-3" controlId="city">
@@ -89,7 +112,7 @@ export default function FormComponent(props) {
                     isSelected = true;
                   }
                 }
-                
+
                 return (<Form.Check
                   key={dtype.value}
                   id={dtype.value}

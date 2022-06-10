@@ -1,22 +1,22 @@
- [
+[
     {
-        "lable": "Current",
+        "label": "Current",
         "value": "current"
     },
     {
-        "lable": "Minutely",
+        "label": "Minutely",
         "value": "minutely"
     },
     {
-        "lable": "Hourly",
+        "label": "Hourly",
         "value": "hourly"
     },
     {
-        "lable": "Daily",
+        "label": "Daily",
         "value": "daily"
     },
     {
-        "lable": "Alerts",
+        "label": "Alerts",
         "value": "alerts"
     }
- ]
+]

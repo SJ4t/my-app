@@ -4,21 +4,22 @@ import cities from './cities.json';
 import dataTypes from './type.json';
 
 export default function FormComponent(props) {
-  
   const formElement = useRef(null);
 
-  
   useEffect(() => {
-    if (props.form === null) {
-      props.setForm({
+    if (props.form === null && !props.cookie) {
+      props.setForm('weather', {
         city: props.selectedCity,
         unit: props.unit,
         language: props.language,
       });
+      props.setCookie({
+
+      })
     }
   });
 
- 
+
   function OnInput() {
     formElement.current.dispatchEvent(
       new Event("submit", { cancelable: true, bubbles: true })

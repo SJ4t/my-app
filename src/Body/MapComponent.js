@@ -14,16 +14,16 @@ export default function MapComponent(props) {
     id: 'google-map-script',
     googleMapsApiKey: google_api_key
   });
-
-  // {}.city = undefined Ne dajot oshybku
-  // null.city = Oshqbka
-  // undefined.city = Oshqbka
+const center = {
+  lat: props.weather.coord.lat,
+  lng: props.weather.coord.lon
+};
   return (
     <Container className="mt-3">
       {isLoaded ? (
         <GoogleMap
           mapContainerStyle={containerStyle}
-          center={cities[(props.cookie || {}).city || props.form.city]}
+          center={center}
           zoom={10}
         >
           { /* Child components, such as markers, info windows, etc. */}

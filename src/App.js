@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -6,11 +6,13 @@ import HeaderComponent from './Header/HeaderComponent';
 import dataTypes from './Header/type.json';
 import MapComponent from './Body/MapComponent';
 import { useCookies } from 'react-cookie';
+import BodyComponent from './Body/BodyComponent';
 
 function App() {
 
-  const [ form, setForm ] = useState(null);
+  const [form, setForm] = useState(null);
   const [cookies, setCookie, removeCookie] = useCookies(['weather']);
+
 
   console.log(cookies.weather);
 
@@ -19,7 +21,7 @@ function App() {
     const city = event.target.city.value;
     const unit = event.target.unit.value;
     let selectedTypes = [];
-    
+
     for (const dtype of event.target.dataType) {
       if (dtype.checked === true) {
         selectedTypes.push(dtype.value);
@@ -42,9 +44,9 @@ function App() {
     <Container>
       <Row>
         <Col>
-          <HeaderComponent 
-            firstName="Rasim" 
-            handleOnSubmitForm={handleOnSubmit} 
+          <HeaderComponent
+            firstName="Rasim"
+            handleOnSubmitForm={handleOnSubmit}
             setForm={setForm}
             form={form}
             cookie={cookies.weather}
@@ -53,7 +55,7 @@ function App() {
       </Row>
       <Row>
         <Col>
-          <MapComponent form={form} cookie={cookies.weather}/>
+          <BodyComponent form={form} / cookies >
         </Col>
       </Row>
     </Container>

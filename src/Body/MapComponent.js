@@ -27,11 +27,11 @@ export default function MapComponent(props) {
           center={center}
           zoom={10}
         >
-          <InfoWindow position={center}>
+          {props.weather.main && (<InfoWindow position={center}>
             <div style={{ fontSize: 20, fontColor: `#08233B` }}>
               {props.weather.main.temp}
             </div>
-          </InfoWindow>
+          </InfoWindow>)}
         </GoogleMap>
       )}
     </>

@@ -14,10 +14,10 @@ export default function NavComponent() {
                         navbarScroll
                     >
                         <Link className="nav-link" to="/">Home</Link>
-                        <Link className="nav-link" to="/current/0">Tallinn</Link>
-                        <Link className="nav-link" to="/current/1">Tartu</Link>
-                        <Link className="nav-link" to="/current/2">Kuresaare</Link>
-                        <Link className="nav-link" to="/current/3">Parnu</Link>
+                        <Link className="nav-link" to="/current/tallinn">Tallinn</Link>
+                        <Link className="nav-link" to="/current/tartu">Tartu</Link>
+                        <Link className="nav-link" to="/current/kuressaare">Kuressaare</Link>
+                        <Link className="nav-link" to="/current/parnu">Parnu</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

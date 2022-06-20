@@ -9,7 +9,7 @@ export default function ForecastComponent(props) {
 
     const [days, setDays] = useState([]);
     const [weather, setWeather] = useState(null);
-// от сюда и ниже перепроверить с расимом с гита 00000000000000000000000000000
+// от сюда и ниже перепроверить с расимом с гита ..............................................
     const get = () => {
         getForecastWeather(props.form || props.cookie)
             .then((response) => {
@@ -34,7 +34,7 @@ export default function ForecastComponent(props) {
                 console.log(dataByDays);
             })
 
-        // что здесь ниже происходит
+        // что здесь ниже происходит ....................................................
 
         setDays(response);
         console.log('response', response);
@@ -43,14 +43,14 @@ export default function ForecastComponent(props) {
         console.error('Error in api call', error);
     });
 }
-// .........................
+// .......................................................................................
 useEffect(() => {
     if (props.form || props.cookie) {
         get();
     }
 }, [props.form || props.cookie]);
 
-// 
+// .......................................................................................
 
 return (
     <>

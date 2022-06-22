@@ -3,15 +3,39 @@ import { Table } from 'react-bootstrap';
 import { sentenceCase } from 'change-case';
 
 export default function DataComponent(props) {
+  console.log('datacomponent', props.cookie.unit);
+
+  function getMeassurments(key) {
+    const unit = props.cookie.unit;
+    let sign = '';
+
+    switch (key) {
+      case 'temp_min':
+      case 'temp_max':
+      case 'temp':
+      case 'feels_like':
+        if (unit === 'metric') {
+          sign = (<>&#8451;</>);
+        }
+        if (unit === 'standart') {
+          sign = (<>&#8490;</>);
+        }
+        if (unit === 'imperial') {
+          sign = (<>&#8457;</>);
+        }
+    }
+
+    return sign
+  }
 
   function generateRows() {
-    if(props.weather) {
+    if (props.weather) {
       const tr = [];
-      for (const [ key, value ] of Object.entries(props.weather.main)) {
+      for (const [key, value] of Object.entries(props.weather.main)) {
         tr.push(<tr key={key}>
-            <td>{sentenceCase(key)}</td>
-            <td>{value}</td>
-          </tr>);
+          <td>{sentenceCase(key)}</td>
+          <td>{value} {getMeassurments(key)}</td>
+        </tr>);
       }
       tr.push(<tr key="description">
         <td>Description</td>

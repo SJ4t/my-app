@@ -15,10 +15,6 @@ export default function HeaderComponent(props) {
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-            );
-}
-            export default BasicExample;
-
         </>
     )
 }

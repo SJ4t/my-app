@@ -62,8 +62,9 @@ function App() {
         <Col>
           <Routes>
             <Route path="/" element={<CurrentComponent form={form} cookie={cookies.weather} />} />
-            <Route path="/current/:city" element={<CurrentComponent form={form} cookie={cookies.weather} />} />
-            <Route path="/forecast" element={<CurrentComponent form={form} cookie={cookies.weather} />} />
+            <Route path="/my-app" element={<CurrentComponent form={form} cookie={cookies.weather} />} />
+            <Route path="/my-app/current/:city" element={<CurrentComponent form={form} cookie={cookies.weather} />} />
+            <Route path="/my-app/forecast" element={<CurrentComponent form={form} cookie={cookies.weather} />} />
           </Routes>
         </Col>
       </Row>

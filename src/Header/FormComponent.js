@@ -7,8 +7,8 @@ import { useLocation } from 'react-router-dom';
 
 export default function FormComponent(props) {
   const formElement = useRef(null);
-  const location = useLocation;
-
+  const location = useLocation();
+  
   useEffect(() => {
     if (props.form === null && !props.cookie) {
       props.setForm('weather', {

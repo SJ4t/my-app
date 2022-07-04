@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import cities frim './cities.json';
+import cities from './cities.json';
 
 export default function NavComponent() {
     return (

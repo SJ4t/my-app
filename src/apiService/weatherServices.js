@@ -1,6 +1,25 @@
 import cities from '../Header/cities.json';
 
 export async function getCurrentWeather(data) {
+        return await get('weather', generateData(data));
+}
+
+export async function getForecastWeather(data) {
+    return await get('forecast', generateData(data));
+}
+
+const get = (endpoint, data) => {
+    const response = await fetch(process.env.REACT_APP_WEATHER_API_URL + '/${endpoint}?' + new URLSearchParams({
+        ...data
+    }));
+
+    return await response.json();
+}
+
+
+
+
+export async function getCurrentWeather(data) {
     const response = await fetch(process.env.REACT_APP_WEATHER_API_URL + '/weather?' + new URLSearchParams({
         lat: cities[data.city].lat,
         lon: cities[data.city].lng,

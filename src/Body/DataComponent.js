@@ -7,25 +7,25 @@ export default function DataComponent(props) {
 
   function getMeassurments(key) {
     const unit = props.cookie.unit;
-    let sign = '';
+    const temperature = ['temp_min', 'temp_max', 'temp', 'feels like'];
+    const humidity = 'humidity';
+    const pressure = 'pressure';
 
-    switch (key) {
-      case 'temp_min':
-      case 'temp_max':
-      case 'temp':
-      case 'feels_like':
-        if (unit === 'metric') {
-          sign = (<>&#8451;</>);
-        }
-        if (unit === 'standart') {
-          sign = (<>&#8490;</>);
-        }
-        if (unit === 'imperial') {
-          sign = (<>&#8457;</>);
-        }
+    const tempSign = {
+      metric: (<>&#8451;</>),
+      standard: (<>&#8490;</>),
+      imprial: (<>&#8457;</>)
     }
 
-    return sign
+    if (temperature.includes(key)) {
+      return tempSign[unit];
+    }
+    if (humidity === key) {
+      return '%';
+    }
+    if (pressure === key) {
+      return (<>&#3169;</>);
+    }
   }
 
   function generateRows() {
